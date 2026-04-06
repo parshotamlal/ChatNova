@@ -213,7 +213,7 @@ export const SearchUserComp = ({
     setSearch(false);
   };
   return (
-    <div onClick={handleSubmitForAcceChat} className="user">
+    <div onClick={handleSubmitForAcceChat} className="user" >
       <div className="history-cont">
         <div>{<Avatar src={pic} />}</div>
         <div>

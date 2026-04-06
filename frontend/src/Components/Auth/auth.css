@@ -2,19 +2,14 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  border-radius: 10px;
   transform: translate(-50%, -50%);
   min-height: auto;
   min-width: 30rem;
-  background-color: #36393f;
-  border-radius: 5px;
-  color: #a8aaaf;
+  background-color: #FFFFFF;
+  color: #1C1C1C;
 }
-.auth-heading {
-  color: white;
-  text-align: center;
-  font-size: 1.8rem;
-  /* border: 2px solid red; */
-}
+
 .inputcom {
   background-color: #202225;
   width: 90%;

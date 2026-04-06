@@ -17,29 +17,7 @@ export default function SideNavbar() {
       <div>
         <Avatar src={user.pic} />
       </div>
-      <div className="mid-icon">
-        <LightTooltip title="Profile" placement="top">
-          <AccountCircleOutlinedIcon />
-        </LightTooltip>
-        <LightTooltip placement="top" title="Chats">
-          <ChatOutlinedIcon />
-        </LightTooltip>
-        {/* <LightTooltip placement="top" title="Groups"> */}
-        <CustomizedDialogs />
-        {/* </LightTooltip> */}
-        <LightTooltip placement="top" title="Contacts">
-          <AssignmentIndOutlinedIcon />
-        </LightTooltip>
-        <LightTooltip placement="top" title="Settings">
-          <SettingsOutlinedIcon />
-        </LightTooltip>
-      </div>
-      <div className="bottom-icon">
-        <LanguageOutlinedIcon />
-        <LightTooltip placement="top" title="Dark/Light Mode">
-          <DarkModeOutlinedIcon />
-        </LightTooltip>
-      </div>
+  
     </div>
   );
 }

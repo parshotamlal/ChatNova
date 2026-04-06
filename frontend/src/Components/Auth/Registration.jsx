@@ -1,4 +1,5 @@
 import "./auth.css";
+import logo from "../../Assets/chatnova.png"
 import avatar from "./profileimg.png";
 import React, { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
@@ -41,52 +42,115 @@ export const RegisterComp = () => {
     return <Navigate to={"/"} />;
   }
   return (
-    <div className="auth-cont">
-      <div>
-        <h2 className="auth-heading">Create an account</h2>
-        <div>
-          <div className="profile-pic">
+    <div className="auth-cont items-center justify-center flex flex-col">
+ {/* LOGO */}
+        <img src={logo} alt="logo" className=" max-h-[150px] max-w-[220px]" />
+       <h2 className="text-xl sm:text-2xl font-semibold text-center mb-5 sm:mb-6">
+      Create Account
+    </h2>
+      <div className=" flex flex-col justify-center items-center">
+        <div className=" flex- justify-center items-center">
+          <div className=" w-[100px] h-[100px]">
             <input onChange={handleInputFile} type="file" name="" id="file" />
             <label htmlFor="file" id="uploadBtn">
-              <img id="photo" src={user?.pic ? user.pic : avatar} />
+              <img className=" w-[100px] h-[100px] rounded-full" src={user?.pic ? user.pic : avatar} />
             </label>
           </div>
           <p className="profile-text">Choose Profile</p>
         </div>
-        <div className="details-cont">
-          <p>Name</p>
-          <input onChange={handleChange} name="name" className="inputcom" />
 
-          <p>Email</p>
-          <input onChange={handleChange} name="email" className="inputcom" />
+        {/* FORM */}
+<div className="flex items-center justify-center  px-1 sm:px-6">
 
-          <p>Password</p>
-          <input
-            onChange={handleChange}
-            type="password"
-            name="password"
-            className="inputcom"
-          />
+  <div className="w-full max-w-md sm:max-w-lg md:max-w-md p-5 sm:p-1 md:p-8 ">
+    {/* Name */}
+    <div className="mb-4">
+      <label className="block text-sm font-medium mb-1">Name</label>
+      <input
+        onChange={handleChange}
+        name="name"
+        type="text"
+        placeholder="Enter your name"
+        className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
 
-          <p>Confirm Password</p>
-          <input type="password" className="inputcom" />
+    {/* Email */}
+    <div className="mb-4">
+      <label className="block text-sm font-medium mb-1">Email</label>
+      <input
+        onChange={handleChange}
+        name="email"
+        type="email"
+        placeholder="Enter your email"
+        className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
 
-          {loading ? (
-            <ColorButton disabled>
-              <CircularProgress style={{ color: "white" }} />
-            </ColorButton>
-          ) : (
-            <ColorButton onClick={handleSubmit}>Continue</ColorButton>
-          )}
+    {/* Password */}
+    <div className="mb-4">
+      <label className="block text-sm font-medium mb-1">Password</label>
+      <input
+        onChange={handleChange}
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
 
-          <Link className="auth-link" to={"/login"}>
-            Already have an account
-          </Link>
-          <p className="contract">
-            By registering you agree to Messenger's{" "}
-            <span>Terms of Service</span> and <span>Privacy Policy</span>.
-          </p>
-        </div>
+    {/* Confirm Password */}
+    <div className="mb-5 sm:mb-6">
+      <label className="block text-sm font-medium mb-1">
+        Confirm Password
+      </label>
+      <input
+        type="password"
+        name="confirmPassword"
+        placeholder="Confirm password"
+        className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    {/* Button */}
+    {loading ? (
+      <button
+        disabled
+        className="w-full bg-blue-500 text-white py-2.5 rounded-lg flex justify-center items-center"
+      >
+        <CircularProgress size={20} style={{ color: "white" }} />
+      </button>
+    ) : (
+      <button
+        onClick={handleSubmit}
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg transition"
+      >
+        Continue
+      </button>
+    )}
+
+    {/* Login Link */}
+    <p className="text-center text-xs sm:text-sm mt-4">
+      Already have an account?{" "}
+      <Link to="/login" className="text-blue-600 hover:underline">
+        Login
+      </Link>
+    </p>
+
+    {/* Terms */}
+    <p className="text-[10px] sm:text-xs text-gray-500 text-center mt-3 sm:mt-4 leading-relaxed">
+      By registering you agree to Messenger's{" "}
+      <span className="text-blue-600 cursor-pointer">
+        Terms of Service
+      </span>{" "}
+      and{" "}
+      <span className="text-blue-600 cursor-pointer">
+        Privacy Policy
+      </span>.
+    </p>
+
+  </div>
+</div>
       </div>
     </div>
   );

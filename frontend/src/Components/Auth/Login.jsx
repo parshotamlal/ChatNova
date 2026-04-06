@@ -1,5 +1,6 @@
 import "./auth.css";
 import avatar from "./profileimg.png";
+import logo from "../../Assets/chatnova.png"
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
@@ -30,8 +31,9 @@ export const LoginComp = () => {
   }
   return (
     <div className="auth-cont">
-      <div>
-        <h2 className="auth-heading">Welcome back!</h2>
+      <div className=" flex flex-col  justify-center items-center">
+       
+       <img src={logo} alt="logo" className=" max-h-[150px] max-w-[220px]" />
 
         <div className="details-cont">
           <p>Email</p>

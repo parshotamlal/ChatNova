@@ -45,6 +45,7 @@ export const ChattingPage = () => {
 
     currentChattingWith = _id;
   }, [_id]);
+  
   useEffect(() => {
     const scrollToBottom = (node) => {
       node.scrollTop = node.scrollHeight;
