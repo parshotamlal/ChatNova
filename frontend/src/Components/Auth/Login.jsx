@@ -20,7 +20,7 @@ export const LoginComp = () => {
     const { name, value } = e.target;
     setRegData({ ...regData, [name]: value });
   };
-
+  
   const handleSubmit = () => {
     const SERVER_POINT = import.meta.env.VITE_SERVER_POINT;
     const url = `${SERVER_POINT}/user/login`;
